@@ -1,0 +1,11 @@
+# videos
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+
+# node/build (if applicable)
+node_modules/
+.next/
+dist/
