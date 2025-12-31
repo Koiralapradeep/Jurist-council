@@ -1544,8 +1544,19 @@ body {
   margin: 0 0 10px;
 }
 
-/* Desktop hover expand */
-@media (hover: hover) and (pointer: fine) {
+/*--service toggle--*/
+.service-details{
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  overflow: hidden;
+  transition: max-height .35s ease, opacity .25s ease, transform .25s ease;
+}
+
+/* --------------------------------
+   Desktop: hover expand
+   -------------------------------- */
+@media (min-width: 1025px) and (hover: hover) and (pointer: fine) {
   .service-card:hover,
   .service-card:focus-within {
     border-color: var(--secondary-gold);
@@ -1559,39 +1570,60 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-
-  .service-toggle {
-    display: none;
-  }
+  .service-toggle { display: none !important; }
 }
 
-/* Mobile/Tablet tap open */
-@media (hover: none) and (pointer: coarse) {
-  .service-card.is-open {
+/* --------------------------------
+   Mobile/Tablet/iPad
+   -------------------------------- */
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
+  .service-card:hover .service-details,
+  .service-card:focus-within .service-details {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    transform: translateY(8px) !important;
+  }
+
+  .service-card.is-open{
     border-color: var(--secondary-gold);
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
   }
-
-  .service-card.is-open .service-details {
-    max-height: 520px;
-    opacity: 1;
-    transform: translateY(0);
+  .service-card.is-open .service-details{
+    max-height: 520px !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
   }
 
-  .service-toggle {
-    position: relative;
-    z-index: 1;
-    margin-top: 14px;
+  /* Button */
+  .service-toggle{
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
-    padding: 10px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    background: rgba(255, 255, 255, 0.85);
-    font-weight: 700;
-    color: var(--primary-navy);
+    margin-top: 14px;
+    padding: 12px 14px;
+
+    border-radius: 12px;
+    border: 1px solid #e3e6ea;
+    background: #fff;
+
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background .2s ease, border-color .2s ease, transform .12s ease;
+  }
+
+  .service-toggle:active{
+    transform: scale(0.98);
   }
 }
+
 
 /* ===== TEAM SECTION ===== */
 .section-header {
