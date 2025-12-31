@@ -207,7 +207,8 @@ body {
 
 /* Mobile Menu Dropdown */
 .mobile-menu {
-  background: var(--primary-navy);
+  background: linear-gradient(90deg, #003893 0%, #6B1C3D 50%, #DC143C 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 20px;
 }
