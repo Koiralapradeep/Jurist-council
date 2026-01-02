@@ -825,7 +825,221 @@
   </div>
 </div>
   </section>
+  <div class="booking-card" aria-labelledby="bookingTitle">
+      <div class="booking-header">
+        <h1
+          id="bookingTitle"
+          class="booking-title"
+          data-np="परामर्श बुक गर्नुहोस्"
+          data-en="Book a Consultation"
+        >
+          परामर्श बुक गर्नुहोस्
+        </h1>
+        <div class="title-underline"></div>
+        <p 
+          class="booking-subtitle"
+          data-np="हामी तपाईंलाई सहयोग गर्न तत्पर छौं"
+          data-en="We're here to help you with your legal needs"
+        >
+          हामी तपाईंलाई सहयोग गर्न तत्पर छौं
+        </p>
+      </div>
 
+      <form id="contactForm" class="booking-form" novalidate>
+        <div class="booking-grid">
+          <!-- Full Name -->
+          <div class="field">
+            <label for="bf_name" data-np="पुरा नाम" data-en="Full Name">
+              पुरा नाम
+            </label>
+            <input
+              id="bf_name"
+              name="full_name"
+              type="text"
+              required
+              minlength="2"
+              maxlength="80"
+              autocomplete="name"
+              data-np-placeholder="तपाईंको पुरा नाम"
+              data-en-placeholder="Your full name"
+              placeholder="तपाईंको पुरा नाम"
+            />
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label for="bf_email" data-np="इमेल ठेगाना" data-en="Email Address">
+              इमेल ठेगाना
+            </label>
+            <input
+              id="bf_email"
+              name="email"
+              type="email"
+              required
+              maxlength="120"
+              autocomplete="email"
+              data-np-placeholder="example@email.com"
+              data-en-placeholder="example@email.com"
+              placeholder="example@email.com"
+            />
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <!-- Phone -->
+          <div class="field">
+            <label for="bf_phone" data-np="फोन नम्बर" data-en="Phone Number">
+              फोन नम्बर
+            </label>
+            <input
+              id="bf_phone"
+              name="phone"
+              type="tel"
+              required
+              maxlength="25"
+              autocomplete="tel"
+              data-np-placeholder="+977 98XXXXXXXX"
+              data-en-placeholder="+977 98XXXXXXXX"
+              placeholder="+977 98XXXXXXXX"
+            />
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <!-- Consultation Type -->
+          <div class="field">
+            <label for="bf_consultation" data-np="परामर्श प्रकार" data-en="Type of Consultation">
+              परामर्श प्रकार
+            </label>
+            <select id="bf_consultation" name="consultation_type" required>
+              <option value="" selected disabled data-np="छान्नुहोस्" data-en="Select">
+                छान्नुहोस्
+              </option>
+              <option value="In-person" data-np="कार्यालयमा" data-en="In-person">
+                कार्यालयमा
+              </option>
+              <option value="Phone" data-np="फोन" data-en="Phone">
+                फोन
+              </option>
+            </select>
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <!-- New / Ongoing Matter -->
+          <fieldset class="field field--full">
+            <legend
+              data-np="यो नयाँ विषय हो कि चलिरहेको केस?"
+              data-en="Is this a new matter or an ongoing case?"
+            >
+              यो नयाँ विषय हो कि चलिरहेको केस?
+            </legend>
+            <div class="radio-row">
+              <label class="radio">
+                <input type="radio" name="matter_status" value="New matter" required />
+                <span data-np="नयाँ विषय" data-en="New matter">नयाँ विषय</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="matter_status" value="Ongoing case" required />
+                <span data-np="चलिरहेको केस" data-en="Ongoing case">चलिरहेको केस</span>
+              </label>
+            </div>
+            <small class="error" aria-live="polite"></small>
+          </fieldset>
+
+          <!-- Consulted Another Attorney -->
+          <fieldset class="field field--full">
+            <legend
+              data-np="यस विषयमा अर्को वकिलसँग परामर्श गर्नुभएको छ?"
+              data-en="Have you consulted with another attorney about this matter?"
+            >
+              यस विषयमा अर्को वकिलसँग परामर्श गर्नुभएको छ?
+            </legend>
+            <div class="radio-row">
+              <label class="radio">
+                <input type="radio" name="consulted_other_attorney" value="Yes" required />
+                <span data-np="छ" data-en="Yes">छ</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="consulted_other_attorney" value="No" required />
+                <span data-np="छैन" data-en="No">छैन</span>
+              </label>
+            </div>
+            <small class="error" aria-live="polite"></small>
+          </fieldset>
+
+          <!-- How Did You Hear About Us -->
+          <div class="field field--full">
+            <label
+              for="bf_source"
+              data-np="हामीबारे कसरी थाहा पाउनुभयो?"
+              data-en="How did you hear about us?"
+            >
+              हामीबारे कसरी थाहा पाउनुभयो?
+            </label>
+            <select id="bf_source" name="heard_about_us" required>
+              <option value="" selected disabled data-np="छान्नुहोस्" data-en="Select">
+                छान्नुहोस्
+              </option>
+              <option value="Referral" data-np="सिफारिस" data-en="Referral">
+                Referral
+              </option>
+              <option value="Google" data-np="गुगल" data-en="Google">
+                Search engine
+              </option>
+              <option value="Social media" data-np="सामाजिक सञ्जाल" data-en="Social media">
+                Social media
+              </option>
+              <option value="Google Maps" data-np="गुगल म्याप" data-en="Google Map">
+                Google Maps
+              </option>
+              <option value="Other" data-np="अन्य" data-en="Other">
+                Other
+              </option>
+            </select>
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <!-- Description -->
+          <div class="field field--full">
+            <label
+              for="bf_desc"
+              data-np="कानुनी समस्याको विवरण"
+              data-en="Description of your legal issue"
+            >
+              कानुनी समस्याको विवरण
+            </label>
+            <textarea
+              id="bf_desc"
+              name="issue_description"
+              rows="5"
+              required
+              minlength="20"
+              maxlength="2000"
+              data-np-placeholder="कृपया समस्या छोटकरीमा लेख्नुहोस्…"
+              data-en-placeholder="Briefly describe your legal issue…"
+              placeholder="कृपया समस्या छोटकरीमा लेख्नुहोस्…"
+            ></textarea>
+            <small class="error" aria-live="polite"></small>
+          </div>
+        </div>
+
+        <div class="booking-actions">
+          <button type="submit" class="booking-btn">
+            <span class="btn-text" data-np="बुक गर्नुहोस्" data-en="Confirm Booking">
+              बुक गर्नुहोस्
+            </span>
+            <span class="btn-loading" aria-hidden="true">Sending…</span>
+          </button>
+
+          <p
+            class="booking-note"
+            data-np="सबै विवरण गोप्य राखिन्छ।"
+            data-en="All details are kept confidential."
+          > सबै विवरण गोप्य राखिन्छ।
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
     <!-- FOOTER -->
 <footer class="footer" id="footer">
   <div class="container">
@@ -957,6 +1171,7 @@
   </filter>
 </svg>
     <!-- JavaScript -->
+     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
